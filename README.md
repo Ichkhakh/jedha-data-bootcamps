@@ -52,7 +52,7 @@ You’ll find:
 
 I'm currently completing the **Fullstack & Lead Data Bootcamps** at Jedha to deepen my technical and strategic skills in the field of data science. I built this repository as a transparent, living portfolio of my work.
 
-Feel free to connect with me on [LinkedIn](https://www.linkedin.com/) or reach out at [email@example.com].
+Feel free to connect with me on [LinkedIn]([https://www.linkedin.com/](https://www.linkedin.com/in/hamza-i-142a72106/)) or reach out at [hamza.ichkhakh@gmail.com].
 
 ---
 

@@ -1,83 +1,83 @@
 
-# 🧠 Projet Quizz - Générateur de Quizz Dynamique
+# 🧠 Quiz Project – Dynamic Quiz Generator
 
-Ce projet a été développé dans le cadre de ma formation en Data chez [Jedha Bootcamp](https://www.jedha.co/) pour **mettre en valeur mes compétences Python**.  
-Il s'agit d'une application en ligne de commande qui génère des quizz personnalisés à partir d'une API publique selon les critères de l'utilisateur.
-
----
-
-## 🎯 Objectifs pédagogiques
-
-- Améliorer mes compétences en **programmation Python**
-- Appliquer la **programmation orientée objet (POO)**
-- Utiliser un **webscraper/API handler** pour construire dynamiquement des requêtes
-- Gérer la **logique de quizz** avec score, validation, et suivi
-- Organiser un projet avec une **structure propre et professionnelle**
-- Préparer le terrain pour une potentielle version web (Flask/FastAPI)
+This project was developed as part of my Data training at [Jedha Bootcamp](https://www.jedha.co/) to **demonstrate my Python skills**.  
+It is a command-line application that generates customized quizzes using a public API based on user-selected parameters.
 
 ---
 
-## 🌐 API utilisée
+## 🎯 Learning Objectives
 
-Ce projet utilise l'API gratuite de [Open Trivia Database (OpenTDB)](https://opentdb.com/).
+- Improve my skills in **Python programming**
+- Apply **Object-Oriented Programming (OOP)**
+- Use a **webscraper/API handler** to dynamically build queries
+- Handle the **quiz logic**, including scoring and answer validation
+- Organize the project with a **clean, modular architecture**
+- Lay the groundwork for a future **web version (Flask/FastAPI)**
 
-### Exemple d'URL :
+---
+
+## 🌐 API Used
+
+This project uses the free API from [Open Trivia Database (OpenTDB)](https://opentdb.com/).
+
+### Example URL:
 ```
 https://opentdb.com/api.php?amount=5&category=18&difficulty=medium&type=multiple
 ```
 
-- `amount` : nombre de questions
-- `category` : thème (science, sport, etc.)
-- `difficulty` : easy / medium / hard
-- `type` : multiple choix ou vrai/faux
+- `amount`: number of questions
+- `category`: quiz category (science, sports, etc.)
+- `difficulty`: easy / medium / hard
+- `type`: multiple choice or true/false
 
 ---
 
-## ⚙️ Structure du projet
+## ⚙️ Project Structure
 
 ```
 quiz_project/
 ├── app/
-│   ├── __init__.py            # Package principal
-│   ├── webscraper.py          # class WebScraper: construit et gère les requêtes API
-│   ├── quiz_manager.py        # class QuizManager: logique de jeu, vérif des réponses
-│   ├── user_interface.py      # class CLIInterface: interaction utilisateur
-│   └── utils.py               # Fonctions utilitaires (ex: nettoyage HTML)
-│
+│   ├── __init__.py            # Package initializer
+│   ├── webscraper.py          # WebScraper class: builds and manages API requests
+│   ├── quiz_manager.py        # QuizManager class: handles game logic and scoring
+│   ├── user_interface.py      # CLIInterface class: user interaction logic
+│   └── utils.py               # Utility functions (e.g., HTML decoding)
 │
 ├── tests/
 │   ├── test_api_handler.py
 │   ├── test_quiz_manager.py
 │   └── test_user_input.py
 │
-├── main.py                    # Point d'entrée du programme
-├── requirements.txt           # Dépendances du projet
-└── README.md                  # Fichier de documentation
+├── main.py                    # Entry point of the program
+├── requirements.txt           # Project dependencies
+└── README.md                  # Project documentation
 ```
+
 ---
 
 ## 🛠️ Technologies
 
 - Python 3.x
 - [OpenTDB API](https://opentdb.com/)
-- POO (Programmation Orientée Objet)
-- Web scraping léger
-- Markdown pour la doc
-- Organisation modulaire de projet
+- Object-Oriented Programming (OOP)
+- Light web scraping
+- Markdown for documentation
+- Modular Python project architecture
 
 ---
 
-## 👨‍💻 Auteur
-Hamza Ichkhakh
-Projet réalisé dans le cadre de la formation **Fullstack & Lead Data chez Jedha Bootcamp**.
+## 👨‍💻 Author
+**Hamza Ichkhakh**  
+This project was created as part of the **Fullstack & Lead Data program at Jedha Bootcamp**.
 
-📎 GitHub : [https://github.com/Ichkhakh/jedha-data-bootcamps] [fullstack/01_python_programming]
-
+📎 GitHub: [https://github.com/Ichkhakh/jedha-data-bootcamps](https://github.com/Ichkhakh/jedha-data-bootcamps)  
+🗂️ Folder: `fullstack/01_python_programming/01_Quizz_project`
 
 ---
 
-## 📌 À venir
+## 📌 Coming Soon
 
-- Version web avec Flask ou FastAPI
-- Ajout d'un timer par question
-- Sauvegarde des scores et leaderboard
+- Web version using Flask or FastAPI
+- Timer per question
+- Score saving and leaderboard

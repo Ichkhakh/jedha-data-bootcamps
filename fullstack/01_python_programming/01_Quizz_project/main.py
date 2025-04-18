@@ -1,4 +1,6 @@
 from app.webscrapper import Webscrapper
+from app.quiz_manager import QuizManager
+import time 
 
 def webscrapper_unit_test():
     """
@@ -55,8 +57,30 @@ def main(unit_test=False):
         result = webscrapper_unit_test()
         print(f"\n🎯 Test Result: {'✅ SUCCESS' if result else '❌ FAILURE'}")
     else:
-        print("Main program...")  
+        # Initialisation des paramètres utilisateur (tu peux les rendre dynamiques plus tard)
+        amount = "10"
+        category = "General Knowledge"
+        difficulty = "Medium"
+        question_type = "Multiple Choice"
+
+        # Étape 1 : Générer l'URL via Webscrapper
+        scraper = Webscrapper(amount, category, difficulty, question_type)
+        api_url = scraper.api_url_generator()
+        
+        if not api_url:
+            print("❌ Unable to generate API URL.")
+            return
+
+        # Étape 2 : Utiliser QuizManager pour jouer
+        quiz = QuizManager(api_url)
+        if quiz.fetch_questions():
+            quiz.run_quiz()
+        else:
+            print("❌ Failed to fetch questions.")
+
+        # Fermer le navigateur à la fin
+        scraper._api_close_driver()
 
 
 if __name__ == "__main__":
-    main(unit_test=True)
+    main(unit_test=False)

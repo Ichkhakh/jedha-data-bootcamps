@@ -1,7 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+import time
 
 class Webscrapper : 
     def __init__(self,amount,category,difficulty,type_,url="https://opentdb.com/api_config.php") :
@@ -11,7 +13,10 @@ class Webscrapper :
         self.difficulty = difficulty
         self.type = type_ 
         try : 
-            driver = webdriver.Chrome()
+            options = Options()
+            options.add_argument("--log-level=3")  # Suppress logs
+            service = Service()
+            driver = webdriver.Chrome(service=service, options=options)
             driver.get(self.url)
         except : 
             print("Error: Couldn't initialized selenium webdriver")
@@ -221,6 +226,7 @@ class Webscrapper :
         else:
             url_api = None
             try:
+                time.sleep(5)
                 generated_api_link = self.driver.find_element(By.XPATH,'//input[@class="form-control"]')
                 url_api = generated_api_link.get_attribute("Value")
             except NoSuchElementException:
